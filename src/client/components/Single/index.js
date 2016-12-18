@@ -2,7 +2,7 @@ import React from 'react'
 import Book from '../Book'
 import Comments from '../Comments'
 
-const Single = React.createClass({
+class Single extends React.Component {
   render() {
     const { id } = this.props.params
     const i = this.props.posts.findIndex((post) => post.code === id)
@@ -12,11 +12,12 @@ const Single = React.createClass({
 
     return (
       <div className="single-book">
-        <Book {...this.props} key={i} index={i} post={post} />
+        <Book {...this.props} key={i} index={i} post={post}/>
         <Comments {...this.props} comments={comments} />
       </div>
     )
   }
-})
+}
 
-export default Single
+
+export default Single;

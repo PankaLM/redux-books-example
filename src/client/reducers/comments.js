@@ -4,9 +4,9 @@ function postComments(state = [], action) {
       user: action.author,
       text: action.comment
     }]
+  } else {
+    return state;
   }
-
-  return state
 }
 
 export default function comments(state = [], action) {

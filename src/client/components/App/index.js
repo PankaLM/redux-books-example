@@ -1,8 +1,21 @@
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-
+import React from 'react'
+import { Link } from 'react-router';
 import * as actionCreators from '../../actions/actionCreators'
-import Main from '../Main'
+
+class Main extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>
+          <Link to="/">Home</Link>
+        </h1>
+        {React.cloneElement(this.props.children, { ...this.props })}
+      </div>
+    )
+  }
+};
 
 function mapStateToProps(state) {
   return {
@@ -15,6 +28,4 @@ function mapDispachToProps(dispatch) {
   return bindActionCreators(actionCreators, dispatch)
 }
 
-const App = connect(mapStateToProps, mapDispachToProps)(Main)
-
-export default App
+export default connect(mapStateToProps, mapDispachToProps)(Main)

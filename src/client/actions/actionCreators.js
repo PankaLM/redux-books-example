@@ -6,3 +6,10 @@ export function addComment(postId, author, comment) {
     comment
   }
 }
+
+export function incrementLikes(index) {
+  return {
+    type: 'INCREMENT_LIKES',
+    index
+  }
+}

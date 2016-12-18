@@ -1,5 +1,5 @@
 {
-  "name": "reduxstagram",
+  "name": "reduxbooks",
   "version": "0.0.1",
   "description": "Books app made with React & Redux",
   "main": "index.js",
@@ -47,6 +47,11 @@
     "react-transform-hmr": "1.0.4",
     "redbox-react": "1.2.6",
     "redux": "3.5.2",
+    "redux-devtools-extension": "^1.0.0",
+    "redux-logger": "^2.7.4",
+    "style-loader": "0.13.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.4.0",
     "webpack": "1.13.1",
     "webpack-dev-middleware": "1.6.1",
     "webpack-hot-middleware": "2.10.0"

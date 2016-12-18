@@ -1,6 +1,12 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 
-const Comments = React.createClass({
+export default class Comments  extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderComment = this.renderComment.bind(this);
+  }
+
   renderComment(comment, index) {
     return (
       <div className="comment" key={index}>
@@ -10,7 +16,7 @@ const Comments = React.createClass({
         </p>
       </div>
     )
-  },
+  }
 
   handleSubmit(e) {
     e.preventDefault()
@@ -21,7 +27,7 @@ const Comments = React.createClass({
 
     this.props.addComment(id, author, comment)
     this.refs.commentForm.reset()
-  },
+  }
 
   render() {
     return (
@@ -33,11 +39,14 @@ const Comments = React.createClass({
           onSubmit={this.handleSubmit}>
           <input type="text" ref="author" placeholder="author"/>
           <input type="text" ref="comment" placeholder="comment"/>
-          <input type="submit" hidden />
+          <input type="submit" value="Submit" />
         </form>
       </div>
     )
   }
-})
+};
 
-export default Comments
+Comments.propTypes = {
+  params: PropTypes.object.isRequired,
+  addComment: PropTypes.func.isRequired
+};
