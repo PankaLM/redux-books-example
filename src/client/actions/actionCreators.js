@@ -13,3 +13,11 @@ export function incrementLikes(index) {
     index
   }
 }
+
+export function incrementLikesAsync(index) {
+  return dispatch => {
+    setTimeout(() => {
+      dispatch(incrementLikes(index));
+    }, 2000);
+  };
+}

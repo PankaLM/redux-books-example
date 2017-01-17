@@ -49,6 +49,7 @@
     "redux": "3.5.2",
     "redux-devtools-extension": "^1.0.0",
     "redux-logger": "^2.7.4",
+    "redux-thunk": "^2.1.0",
     "style-loader": "0.13.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.4.0",

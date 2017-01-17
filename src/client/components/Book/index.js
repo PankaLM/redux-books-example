@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react'
 import { Link } from 'react-router'
 
-const Book = ({ post, comments, incrementLikes, index }) => {
+const Book = ({ post, comments, incrementLikes, incrementLikesAsync, index }) => {
   return (
     <div className="list-book-wrap">
       <Link to={`/view/${post.code}`}>
@@ -11,6 +11,9 @@ const Book = ({ post, comments, incrementLikes, index }) => {
       <div className="control-buttons">
         <button onClick={incrementLikes.bind(null, index)} className="likes">
             &hearts; {post.likes}
+        </button>
+        <button onClick={incrementLikesAsync.bind(null, index)} className="likec">
+            &hearts; {post.likes} async
         </button>
         <Link to={`/view/${post.code}`} className="button">
           <span className="comment-count">
@@ -25,7 +28,9 @@ const Book = ({ post, comments, incrementLikes, index }) => {
 Book.propTypes = {
   post: PropTypes.object.isRequired,
   comments: PropTypes.object.isRequired,
-  incrementLikes: PropTypes.func.isRequired
+  incrementLikes: PropTypes.func.isRequired,
+  incrementLikesAsync: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired
 };
 
 export default Book;
