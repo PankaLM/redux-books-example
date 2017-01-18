@@ -1,12 +1,12 @@
 import React, {PropTypes} from 'react'
 import Book from '../Book'
 
-const BookList = ({ posts, comments, incrementLikes, incrementLikesAsync}) => {
+const BookList = (props) => {
   return (
     <div className="books-list">
-      {posts.map((post, i) => {
+      {props.posts.map((post, i) => {
         return (
-          <Book incrementLikes={incrementLikes} incrementLikesAsync={incrementLikesAsync} key={i} post={post} index={i} comments={comments}/>
+          <Book {...props} key={i} index={i} post={post}/>
         )
       })}
     </div>
